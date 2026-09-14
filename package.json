@@ -1,0 +1,13 @@
+{
+  "name": "simbiose-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": "24.x"},
+  "scripts": {
+    "build": "node scripts/build-vercel.mjs",
+    "test": "node --test server/*.test.mjs",
+    "dev": "node --env-file=.env --env-file-if-exists=.env.local server/dev.mjs",
+    "start:vps": "node --env-file=.env server/index.mjs"
+  }
+}
