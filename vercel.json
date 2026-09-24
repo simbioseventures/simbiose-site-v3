@@ -7,7 +7,8 @@
     "api/*.js": {"maxDuration": 30}
   },
   "rewrites": [
-    {"source": "/api/contact/config.json", "destination": "/api/contact-config"}
+    {"source": "/api/contact/config.json", "destination": "/api/contact-config"},
+    {"source": "/educacional", "destination": "/educacional/index.html"}
   ],
   "headers": [
     {"source": "/api/:path*", "headers": [{"key": "Cache-Control", "value": "no-store"}]}

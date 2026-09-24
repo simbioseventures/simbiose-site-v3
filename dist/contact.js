@@ -11,6 +11,8 @@
   const emailError = document.getElementById('contact-email-error');
   const messageInput = document.getElementById('contact-message');
   const defaultButton = submit.innerHTML;
+  // Pages other than the home (e.g. /educacional) tag the message so the team knows where it came from.
+  const messagePrefix = form.dataset.messagePrefix || '';
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let widget;
   let token = '';
@@ -203,7 +205,7 @@
     const data = new FormData(form);
     lastPayload = {
       name: data.get('name'), email: data.get('email'), company: data.get('company'),
-      message: data.get('message'), website: data.get('website'), captchaToken: token
+      message: messagePrefix + data.get('message'), website: data.get('website'), captchaToken: token
     };
     submit.textContent = 'Enviando…';
     setStatus('Enviando sua mensagem…');
